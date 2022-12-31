@@ -1,6 +1,5 @@
 package com.lucasarend.foxxytechnology;
 
-import com.lucasarend.foxxytechnology.events.HitFoxy;
 import com.mojang.logging.LogUtils;
 import itens.ModItems;
 import net.minecraft.client.Minecraft;

@@ -2,6 +2,7 @@ package com.lucasarend.foxxytechnology;
 
 import com.lucasarend.foxxytechnology.events.HitFoxy;
 import com.mojang.logging.LogUtils;
+import itens.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,6 +30,9 @@ public class FoxxyTechnology
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ModItems.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         //modEventBus.addGenericListener(Entity.class, ExampleMod::forgeEventHandler);

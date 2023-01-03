@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A#A",
+    "#G#",
+    "A#A"
+  ],
+  "key": {
+    "#": {
+      "item": "foxxytechnology:foxygem"
+    },
+    "G": {
+      "item": "minecraft:egg"
+    },
+	"A": {
+      "item": "minecraft:sweet_berries"
+    }
+  },
+  "result": {
+    "item": "minecraft:fox_spawn_egg",
+	"count": 2
+  }
+}

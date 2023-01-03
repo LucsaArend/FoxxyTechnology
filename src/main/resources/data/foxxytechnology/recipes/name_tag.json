@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#G#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:paper"
+    },
+    "G": {
+      "item": "foxxytechnology:foxygem"
+    }
+  },
+  "result": {
+    "item": "minecraft:name_tag"
+  }
+}

@@ -1,5 +1,6 @@
 package com.lucasarend.foxxytechnology;
 
+import com.lucasarend.foxxytechnology.paintings.ModPaintings;
 import com.mojang.logging.LogUtils;
 import com.lucasarend.foxxytechnology.itens.ModItems;
 import net.minecraft.client.Minecraft;
@@ -29,6 +30,8 @@ public class FoxxyTechnology
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ModPaintings.register(modEventBus);
 
         ModItems.register(modEventBus);
 

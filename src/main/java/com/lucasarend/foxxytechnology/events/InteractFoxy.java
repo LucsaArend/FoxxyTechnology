@@ -26,6 +26,8 @@ public final class InteractFoxy
             //ItemStack itemStack = event.getItemStack();
             Item itemHand = event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).getItem();
 
+            boolean removeItemHand = false;
+
             if (itemHand == Items.IRON_INGOT) {
                 FoxxyTechnology.LOGGER.info("Clicou na raposa usando um Ferro");
                 //Give a Item a Player
@@ -33,8 +35,7 @@ public final class InteractFoxy
                 setStack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(event.getEntity(), setStack);
                 //Remove a item event a player
-                ItemStack stktoremove = new ItemStack(itemHand);
-                event.getEntity().getInventory().clearOrCountMatchingItems(p -> stktoremove.getItem() == p.getItem(), 1, event.getEntity().inventoryMenu.getCraftSlots());
+                removeItemHand = true;
             } else if (itemHand == Items.GOLD_INGOT) {
                 FoxxyTechnology.LOGGER.info("Clicou na raposa usando um Ouro");
                 //Give a Item a Player
@@ -42,8 +43,7 @@ public final class InteractFoxy
                 setStack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(event.getEntity(), setStack);
                 //Remove a item event a player
-                ItemStack stktoremove = new ItemStack(itemHand);
-                event.getEntity().getInventory().clearOrCountMatchingItems(p -> stktoremove.getItem() == p.getItem(), 1, event.getEntity().inventoryMenu.getCraftSlots());
+                removeItemHand = true;
             } else if (itemHand == Items.DIAMOND) {
                 FoxxyTechnology.LOGGER.info("Clicou na raposa usando um Diamante");
                 //Give a Item a Player
@@ -51,11 +51,17 @@ public final class InteractFoxy
                 setStack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(event.getEntity(), setStack);
                 //Remove a item event a player
-                ItemStack stktoremove = new ItemStack(itemHand);
-                event.getEntity().getInventory().clearOrCountMatchingItems(p -> stktoremove.getItem() == p.getItem(), 1, event.getEntity().inventoryMenu.getCraftSlots());
+                removeItemHand = true;
             } else {
                 FoxxyTechnology.LOGGER.info("Clicou com o direito em uma raposa com: " + itemHand );
             }
+
+            //Remove a item event a player
+            if (removeItemHand) {
+                ItemStack stktoremove = new ItemStack(itemHand);
+                event.getEntity().getInventory().clearOrCountMatchingItems(p -> stktoremove.getItem() == p.getItem(), 1, event.getEntity().inventoryMenu.getCraftSlots());
+            }
+
         }
     }
 

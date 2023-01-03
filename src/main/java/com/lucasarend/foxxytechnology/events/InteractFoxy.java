@@ -1,10 +1,9 @@
 package com.lucasarend.foxxytechnology.events;
 
 import com.lucasarend.foxxytechnology.FoxxyTechnology;
-import itens.ModItems;
+import com.lucasarend.foxxytechnology.itens.ModItems;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

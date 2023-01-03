@@ -1,7 +1,7 @@
 package com.lucasarend.foxxytechnology;
 
 import com.mojang.logging.LogUtils;
-import itens.ModItems;
+import com.lucasarend.foxxytechnology.itens.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "foxxytechnology:basicingot_block"
+    }
+  ],
+  "result": {
+    "item": "foxxytechnology:basicfoxyingot",
+    "count": 9
+  }
+}

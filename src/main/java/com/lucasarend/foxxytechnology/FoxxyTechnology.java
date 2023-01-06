@@ -1,5 +1,6 @@
 package com.lucasarend.foxxytechnology;
 
+import com.lucasarend.foxxytechnology.blocks.ModBlocks;
 import com.lucasarend.foxxytechnology.paintings.ModPaintings;
 import com.mojang.logging.LogUtils;
 import com.lucasarend.foxxytechnology.itens.ModItems;
@@ -32,8 +33,9 @@ public class FoxxyTechnology
         modEventBus.addListener(this::commonSetup);
 
         ModPaintings.register(modEventBus);
-
         ModItems.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

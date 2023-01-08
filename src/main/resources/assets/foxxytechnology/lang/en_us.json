@@ -5,5 +5,9 @@
   "item.foxxytechnology.advancedfoxyingot": "Advanced Foxy Ingot",
   "item.foxxytechnology.foxygem": "Foxy Gem",
 
-  "block.foxxytechnology.basicingot_block": "Block of Basic Ingot"
+  "block.foxxytechnology.basicingot_block": "Block of Basic Ingot",
+  "block.foxxytechnology.advancedfoxyingot_block": "Block of Advanced Ingot",
+  "block.foxxytechnology.foxygem_block": "Block of Foxy Gem"
+
+
 }

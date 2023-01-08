@@ -20,8 +20,16 @@ public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, FoxxyTechnology.MODID);
-
+    /* Blocos */
     public static final RegistryObject<Block> BASICINGOT_BLOCK = registerBlock("basicingot_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
+
+    public static final RegistryObject<Block> ADVANCEDFOXYINGOT_BLOCK = registerBlock("advancedfoxyingot_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
+
+    public static final RegistryObject<Block> FOXYGEM_BLOCK = registerBlock("foxygem_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
 

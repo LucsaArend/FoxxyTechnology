@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "foxxytechnology:foxygem_block"
+    }
+  ],
+  "result": {
+    "item": "foxxytechnology:foxygem",
+    "count": 9
+  }
+}

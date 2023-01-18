@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "AXA",
+    "#A#"
+  ],
+  "key": {
+    "#": {
+      "item": "foxxytechnology:basicfoxyingot"
+    },
+    "X": {
+      "item": "minecraft:golden_sword"
+    },
+    "A": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "foxxytechnology:mob_slayer"
+  }
+}

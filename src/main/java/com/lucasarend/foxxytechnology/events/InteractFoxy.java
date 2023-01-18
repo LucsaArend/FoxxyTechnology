@@ -7,6 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,6 +16,7 @@ import net.minecraftforge.items.ItemHandlerHelper;
 @Mod.EventBusSubscriber(modid = FoxxyTechnology.MODID)
 public final class InteractFoxy
 {
+    /* Foxy Give Itens Mod */
     @SubscribeEvent
     public static void onPlayerInteractEntity(PlayerInteractEvent.RightClickItem.EntityInteract event) {
         //Cliente side dont run event

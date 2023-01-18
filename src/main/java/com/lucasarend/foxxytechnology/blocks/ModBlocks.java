@@ -7,6 +7,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,6 +33,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> FOXYGEM_BLOCK = registerBlock("foxygem_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
+
+    /*public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
+            () -> new MobSlayerBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));*/
+
+    public static final RegistryObject<Block> MOB_SLAYER = registerBlock("mob_slayer",
+            () -> new MobSlayerBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
+
 
     /* Registra o Bloco */
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

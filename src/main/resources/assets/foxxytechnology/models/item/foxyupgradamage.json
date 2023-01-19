@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "foxxytechnology:item/foxyupgraderage"
+    "layer0": "foxxytechnology:item/foxyupgradamage"
   }
 }

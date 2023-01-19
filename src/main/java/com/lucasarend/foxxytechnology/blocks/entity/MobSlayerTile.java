@@ -16,6 +16,7 @@ import java.util.List;
 public class MobSlayerTile extends BlockEntity {
 
     int timer = 0;
+    int damage = 2;
     boolean isActive = true;
 
     public MobSlayerTile(BlockPos pos, BlockState state) {
@@ -43,7 +44,7 @@ public class MobSlayerTile extends BlockEntity {
         List<Entity> entities = this.level.getEntities(null, box);
         for (Entity target : entities){
             if (target instanceof LivingEntity && !(target instanceof Player)){
-                target.hurt(DamageSource.MAGIC, 2);
+                target.hurt(DamageSource.MAGIC, damage);
             }
         }
     }
@@ -52,15 +53,22 @@ public class MobSlayerTile extends BlockEntity {
         this.isActive = !this.isActive;
     }
 
+    public void addDamage()
+    {
+        this.damage += 2;
+    }
+
     @Override
     public void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
         nbt.putBoolean("active", this.isActive);
+        nbt.putInt("damage", this.damage);
     }
 
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
         this.isActive = nbt.getBoolean("active");
+        this.damage = nbt.getInt("damage");
     }
 }

@@ -21,6 +21,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> FOXYGEM = ITEMS.register("foxygem",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FOXXYTECHNOLOGY_TAB)));
+    //Upgrade Itens
+    public static final RegistryObject<Item> FOXY_UPGRADE_RAGE = ITEMS.register("foxyupgraderage",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FOXXYTECHNOLOGY_TAB)));
+    public static final RegistryObject<Item> FOXY_UPGRADE_DAMAGE = ITEMS.register("foxyupgradamage",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FOXXYTECHNOLOGY_TAB)));
     //Tools
 
 

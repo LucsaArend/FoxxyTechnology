@@ -17,6 +17,7 @@ public class MobSlayerTile extends BlockEntity {
 
     int timer = 0;
     int damage = 2;
+    int range = 5;
     boolean isActive = true;
 
     public MobSlayerTile(BlockPos pos, BlockState state) {
@@ -34,11 +35,9 @@ public class MobSlayerTile extends BlockEntity {
             }
         }
     }
-
-    final int RANGE = 5;
     private void hurtMobs() {
-        BlockPos topCorner = this.worldPosition.offset(RANGE, RANGE, RANGE);
-        BlockPos bottomCorner = this.worldPosition.offset(-RANGE, -RANGE, -RANGE);
+        BlockPos topCorner = this.worldPosition.offset(range, range, range);
+        BlockPos bottomCorner = this.worldPosition.offset(-range, -range, -range);
         AABB box = new AABB(topCorner, bottomCorner);
 
         List<Entity> entities = this.level.getEntities(null, box);
@@ -58,11 +57,16 @@ public class MobSlayerTile extends BlockEntity {
         this.damage += 2;
     }
 
+    public void addRange(){
+        this.range += 1;
+    }
+
     @Override
     public void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
         nbt.putBoolean("active", this.isActive);
         nbt.putInt("damage", this.damage);
+        nbt.putInt("range", this.range);
     }
 
     @Override
@@ -70,5 +74,14 @@ public class MobSlayerTile extends BlockEntity {
         super.load(nbt);
         this.isActive = nbt.getBoolean("active");
         this.damage = nbt.getInt("damage");
+        this.range = nbt.getInt("range");
+    }
+
+    public int getDamage() {
+        return this.damage;
+    }
+
+    public int getRage(){
+        return this.range;
     }
 }

@@ -4,6 +4,7 @@ import com.lucasarend.foxxytechnology.blocks.entity.MobSlayerTile;
 import com.lucasarend.foxxytechnology.blocks.entity.ModBlockEntities;
 import com.lucasarend.foxxytechnology.itens.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -57,6 +58,10 @@ public class MobSlayerBlock extends Block implements EntityBlock {
                 Item itemMao = player.getItemInHand(InteractionHand.MAIN_HAND).getItem();
                 if (itemMao == ModItems.FOXY_UPGRADE_DAMAGE.get()) {
                     ((MobSlayerTile) tile).addDamage();
+                    ItemStack stktoremove = new ItemStack(itemMao);
+                    player.getInventory().clearOrCountMatchingItems(p -> stktoremove.getItem() == p.getItem(), 1, player.inventoryMenu.getCraftSlots());
+                } else if (itemMao == ModItems.FOXY_UPGRADE_RAGE.get()) {
+                    ((MobSlayerTile) tile).addRange();
                     ItemStack stktoremove = new ItemStack(itemMao);
                     player.getInventory().clearOrCountMatchingItems(p -> stktoremove.getItem() == p.getItem(), 1, player.inventoryMenu.getCraftSlots());
                 }

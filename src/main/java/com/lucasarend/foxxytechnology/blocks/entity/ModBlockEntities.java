@@ -22,6 +22,16 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(MobSlayerTile::new,
                             ModBlocks.MOB_SLAYER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<InifinityWaterTile>> INFINITY_WATER =
+            BLOCK_ENTITIES.register("infinity_water", () ->
+                    BlockEntityType.Builder.of(InifinityWaterTile::new,
+                            ModBlocks.INFINITY_WATER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<InfinityLavaTile>> INFINITY_LAVA =
+            BLOCK_ENTITIES.register("infinity_lava", () ->
+                    BlockEntityType.Builder.of(InfinityLavaTile::new,
+                            ModBlocks.INFINITY_LAVA.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

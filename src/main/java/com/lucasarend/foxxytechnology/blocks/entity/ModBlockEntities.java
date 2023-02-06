@@ -22,12 +22,6 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(MobSlayerTile::new,
                             ModBlocks.MOB_SLAYER.get()).build(null));
 
-    /*public static final RegistryObject<BlockEntityType<AdvancedSpawnBlockEntity>> ADVANCED_SPAWN_BLOCK =
-            BLOCK_ENTITIES.register("advanced_spawn_block", () ->
-                    BlockEntityType.Builder.of(AdvancedSpawnBlockEntity::new,
-                            ModBlocks.ADVANCED_SPAWN_BLOCK.get()).build(null));*/
-
-
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

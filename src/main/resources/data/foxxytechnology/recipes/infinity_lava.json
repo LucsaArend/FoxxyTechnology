@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "AXA",
+    "#A#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:cobblestone"
+    },
+    "X": {
+      "item": "foxxytechnology:basicfoxyingot"
+    },
+    "A": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "item": "foxxytechnology:infinity_lava"
+  }
+}

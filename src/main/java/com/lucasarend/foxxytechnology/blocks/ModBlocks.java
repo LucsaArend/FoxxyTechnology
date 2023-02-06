@@ -33,14 +33,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> FOXYGEM_BLOCK = registerBlock("foxygem_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
-
-    /*public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
-            () -> new MobSlayerBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));*/
-
     public static final RegistryObject<Block> MOB_SLAYER = registerBlock("mob_slayer",
             () -> new MobSlayerBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
-
+    public static final RegistryObject<Block> INFINITY_WATER = registerBlock("infinity_water",
+            () -> new InfinityWaterBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
+    public static final RegistryObject<Block> INFINITY_LAVA = registerBlock("infinity_lava",
+            () -> new InfinityLavaBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
 
     /* Registra o Bloco */
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

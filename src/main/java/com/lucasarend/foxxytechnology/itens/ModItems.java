@@ -2,6 +2,7 @@ package com.lucasarend.foxxytechnology.itens;
 
 import com.lucasarend.foxxytechnology.FoxxyTechnology;
 import com.lucasarend.foxxytechnology.creativetabs.ModCreativeModeTab;
+import com.lucasarend.foxxytechnology.itens.tools.pickaxe.BasicFoxyPickaxe;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,7 +28,8 @@ public class ModItems {
     public static final RegistryObject<Item> FOXY_UPGRADE_DAMAGE = ITEMS.register("foxyupgradamage",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FOXXYTECHNOLOGY_TAB)));
     //Tools
-
+    public static final RegistryObject<Item> FOXY_BASIC_PICKAXE = ITEMS.register("foxybasicpickaxe",
+            () -> new BasicFoxyPickaxe());
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

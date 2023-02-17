@@ -76,4 +76,17 @@ public class MobSlayerBlock extends Block implements EntityBlock {
         return super.use(state, world, pos, player, hand, hit);
     }
 
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        if (pState.getBlock() != pNewState.getBlock()) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+
+            if (blockEntity instanceof MobSlayerTile) {
+                ((MobSlayerTile) blockEntity).drops(pLevel,pPos);
+            }
+
+        }
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    }
+
 }

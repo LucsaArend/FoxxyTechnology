@@ -2,7 +2,9 @@ package com.lucasarend.foxxytechnology.itens;
 
 import com.lucasarend.foxxytechnology.FoxxyTechnology;
 import com.lucasarend.foxxytechnology.creativetabs.ModCreativeModeTab;
+import com.lucasarend.foxxytechnology.itens.tools.axe.BasicFoxyAxe;
 import com.lucasarend.foxxytechnology.itens.tools.pickaxe.BasicFoxyPickaxe;
+import com.lucasarend.foxxytechnology.itens.tools.shovel.BasicFoxyShovel;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +32,12 @@ public class ModItems {
     //Tools
     public static final RegistryObject<Item> FOXY_BASIC_PICKAXE = ITEMS.register("foxybasicpickaxe",
             () -> new BasicFoxyPickaxe());
+
+    public static final RegistryObject<Item> FOXY_BASIC_AXE = ITEMS.register("foxybasicaxe",
+            () -> new BasicFoxyAxe());
+
+    public static final RegistryObject<Item> FOXY_BASIC_SHOVEL = ITEMS.register("foxybasicshovel",
+            () -> new BasicFoxyShovel());
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

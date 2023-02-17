@@ -1,4 +1,4 @@
-package com.lucasarend.foxxytechnology.itens.tools.pickaxe;
+package com.lucasarend.foxxytechnology.itens.tools.axe;
 
 import com.lucasarend.foxxytechnology.creativetabs.ModCreativeModeTab;
 import com.lucasarend.foxxytechnology.itens.ModItems;
@@ -9,13 +9,16 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 
-public class BasicFoxyPickaxe extends PickaxeItem
+public class BasicFoxyAxe extends AxeItem
 {
-    public BasicFoxyPickaxe()
+    public BasicFoxyAxe()
     {
         super(new Tier() {
             public int getUses() {
@@ -25,7 +28,7 @@ public class BasicFoxyPickaxe extends PickaxeItem
                 return 7f;
             }
             public float getAttackDamageBonus() {
-                return 3f;
+                return 3.2f;
             }
             public int getLevel() {
                 return 3;
@@ -53,13 +56,12 @@ public class BasicFoxyPickaxe extends PickaxeItem
                 Player player = (Player)entity;
                 Item itemHand = player.getItemInHand(InteractionHand.MAIN_HAND).getItem();
 
-                if (itemHand == ModItems.FOXY_BASIC_PICKAXE.get()) {
+                if (itemHand == ModItems.FOXY_BASIC_AXE.get()) {
                     _entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60, 1));
                 }
             }
 
         }
     }
-
 
 }

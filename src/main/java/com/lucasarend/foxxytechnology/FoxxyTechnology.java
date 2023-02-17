@@ -3,6 +3,7 @@ package com.lucasarend.foxxytechnology;
 import com.lucasarend.foxxytechnology.blocks.ModBlocks;
 import com.lucasarend.foxxytechnology.blocks.entity.ModBlockEntities;
 import com.lucasarend.foxxytechnology.paintings.ModPaintings;
+import com.lucasarend.foxxytechnology.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
 import com.lucasarend.foxxytechnology.itens.ModItems;
 import net.minecraft.client.Minecraft;
@@ -38,6 +39,8 @@ public class FoxxyTechnology
 
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

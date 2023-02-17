@@ -1,11 +1,14 @@
 package com.lucasarend.foxxytechnology.blocks.entity;
 
+import com.lucasarend.foxxytechnology.itens.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,6 +21,9 @@ public class MobSlayerTile extends BlockEntity {
     int timer = 0;
     int damage = 2;
     int range = 5;
+
+    int instalDamageUp = 0;
+    int instalRangeUp = 0;
     boolean isActive = true;
 
     public MobSlayerTile(BlockPos pos, BlockState state) {
@@ -55,10 +61,12 @@ public class MobSlayerTile extends BlockEntity {
     public void addDamage()
     {
         this.damage += 2;
+        this.instalDamageUp += 1;
     }
 
     public void addRange(){
         this.range += 1;
+        this.instalRangeUp += 1;
     }
 
     @Override
@@ -67,6 +75,8 @@ public class MobSlayerTile extends BlockEntity {
         nbt.putBoolean("active", this.isActive);
         nbt.putInt("damage", this.damage);
         nbt.putInt("range", this.range);
+        nbt.putInt("instalRangeUp", this.instalRangeUp);
+        nbt.putInt("instalDamageUp", this.instalDamageUp);
     }
 
     @Override
@@ -75,6 +85,8 @@ public class MobSlayerTile extends BlockEntity {
         this.isActive = nbt.getBoolean("active");
         this.damage = nbt.getInt("damage");
         this.range = nbt.getInt("range");
+        this.instalDamageUp = nbt.getInt("instalDamageUp");
+        this.instalRangeUp = nbt.getInt("instalRangeUp");
     }
 
     public int getDamage() {
@@ -83,5 +95,29 @@ public class MobSlayerTile extends BlockEntity {
 
     public int getRage(){
         return this.range;
+    }
+
+    public void drops(Level pLevel,BlockPos pBlock) {
+
+        if (!pLevel.isClientSide()) {
+
+            ItemEntity damageItem = new ItemEntity(pLevel, pBlock.getX() ,pBlock.getY(),pBlock.getZ(), new ItemStack(ModItems.FOXY_UPGRADE_DAMAGE.get()));
+            ItemEntity rangeItem = new ItemEntity(pLevel, pBlock.getX() ,pBlock.getY(),pBlock.getZ(), new ItemStack(ModItems.FOXY_UPGRADE_RAGE.get()));
+
+            for (int i=0;i<this.instalDamageUp;i++) {
+                pLevel.addFreshEntity(damageItem);
+            }
+            for (int i=0;i<this.instalRangeUp;i++) {
+                pLevel.addFreshEntity(rangeItem);
+            }
+
+        }
+
+        /*if (world instanceof Level _level && !_level.isClientSide()) {
+            ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.COAL_ORE));
+            entityToSpawn.setPickUpDelay(10);
+            _level.addFreshEntity(entityToSpawn);
+        }*/
+
     }
 }

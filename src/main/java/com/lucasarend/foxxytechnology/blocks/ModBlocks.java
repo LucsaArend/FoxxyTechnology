@@ -33,6 +33,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> FOXYGEM_BLOCK = registerBlock("foxygem_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(3f)), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
+
+    public static final RegistryObject<Block> DEEPSLATE_MERCURY_ORE = registerBlock("deepslate_mercury_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f)), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);
     public static final RegistryObject<Block> MOB_SLAYER = registerBlock("mob_slayer",
             () -> new MobSlayerBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(1f)), ModCreativeModeTab.FOXXYTECHNOLOGY_TAB);

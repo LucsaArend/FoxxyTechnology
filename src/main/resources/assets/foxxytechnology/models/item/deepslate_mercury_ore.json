@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "foxxytechnology:block/deepslate_mercury_ore"
+  }
+}

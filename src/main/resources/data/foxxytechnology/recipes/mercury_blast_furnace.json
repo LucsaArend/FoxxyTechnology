@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "foxxytechnology:deepslate_mercury_ore"
+  },
+  "result": "foxxytechnology:mercury",
+  "experience": 4.5,
+  "cookingtime": 2000,
+  "count" : 10
+}

@@ -2,6 +2,7 @@ package com.lucasarend.foxxytechnology.itens;
 
 import com.lucasarend.foxxytechnology.FoxxyTechnology;
 import com.lucasarend.foxxytechnology.creativetabs.ModCreativeModeTab;
+import com.lucasarend.foxxytechnology.itens.sword.BasicFoxySword;
 import com.lucasarend.foxxytechnology.itens.tools.axe.BasicFoxyAxe;
 import com.lucasarend.foxxytechnology.itens.tools.pickaxe.BasicFoxyPickaxe;
 import com.lucasarend.foxxytechnology.itens.tools.shovel.BasicFoxyShovel;
@@ -38,6 +39,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> FOXY_BASIC_SHOVEL = ITEMS.register("foxybasicshovel",
             () -> new BasicFoxyShovel());
+
+    public static final RegistryObject<Item> FOXY_BASIC_SWORD = ITEMS.register("foxybasicsword",
+            () -> new BasicFoxySword());
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
